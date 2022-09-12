@@ -35,6 +35,10 @@
   <script>
     var socket = io();
 
+    socket.on('connect', () => {
+      console.log('Conectado');
+    });
+
     const formulario = document.querySelector('#miFormulario');
     const mensajes = document.querySelector('#misMensajes');
     const txtMessage = document.querySelector('#txtMessage');
