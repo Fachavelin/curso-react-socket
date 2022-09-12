@@ -1,19 +1,6 @@
-const express = require('express');
-const { createServer } = require('http');
-const { Server } = require('socket.io');
+const Server = require('./models/server');
+require('dotenv').config();
 
-const app = express();
+const server = new Server();
 
-const server = createServer(app);
-
-const io = new Server(server, {
-  /* options */
-});
-
-io.on('connection', (socket) => {
-  console.log('Cliente conectado');
-});
-
-server.listen(3000, () => {
-  console.log('Server corriendo en puerto 3000');
-});
+server.execute();
